@@ -1,0 +1,16 @@
+@media (max-width: 767px) {
+    .header{
+        background-position: 20vw top;
+    }
+    .subscribe-email, .subscribe__button{
+        margin-left: 0;
+    }
+}
+@media (max-width: 500px) {
+    .article__heading{
+        font-size: 40px;
+    }
+    .section__heading{
+        font-size: 30px;
+    }
+}
