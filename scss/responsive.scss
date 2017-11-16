@@ -1,3 +1,8 @@
+@media (min-width: 1300px){
+    .container{
+        max-width: 1240px;
+    }
+}
 @media (max-width: 767px) {
     .header{
         background-position: 20vw top;

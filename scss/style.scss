@@ -126,10 +126,8 @@ body{
     box-shadow: 0px 2px 3px rgba(0,0,0,0.5);
     border: 0;
     cursor: pointer;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: inline-block;
+    padding: 10px;
 }
 .header__link{
     background-color: rgb(255, 96, 48);
@@ -146,8 +144,8 @@ body{
     background: radial-gradient(circle farthest-side at 50%, rgba(0, 196, 196, 0.9) 0%, rgba(0, 183, 183, 0.9) 31%, rgba(0, 173, 173, 0.9) 67%, rgba(0, 156, 156,0.9) 100%);
 }
 .article, .section-subscribe{
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 .article__heading{
     font-size: 70px;
@@ -223,7 +221,7 @@ body{
     width: 100%;
     top: 40%;
 }
-.gallery__heading{
+.gallery__heading, .contact__heading{
     color: $text-dark;
 }
 .article-gallery{
@@ -282,6 +280,7 @@ body{
 .subscribe-email{
     border: 1px solid rgb(33, 33, 33);
     border-radius: 0;
+    margin-right: 20px;
 }
 .article-blog{
     background-color: #b07cf7;
@@ -292,33 +291,50 @@ body{
     position: relative;
     background-color: red;
     margin-top: 20px;
+    margin-bottom: 20px;
     color: white;
     box-shadow: 0px 2px 3px rgba(0,0,0,0.5);
     background-size: cover;
+    background-position: center center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    z-index: 10;
     &:nth-of-type(1){
         background-image: url('../img/opt/blog-img_1.png');
     }
     &:nth-of-type(2){
         background-image: url('../img/opt/blog-img_2.png');
+        background-position: center bottom;
     }
     &:nth-of-type(3){
         background-image: url('../img/opt/blog-img_3.png');
     }
+    &:after{
+        content: '';
+        position: absolute;
+        top:0; left:0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0,0,0,0.3);
+        z-index: 30;
+        background: -moz-linear-gradient(top,rgba(0,0,0,0.0) 40%, rgba(0,0,0,1) 100%);
+        background: -webkit-linear-gradient(top, rgba(0,0,0,0.0) 40%,rgba(0,0,0,1) 100%);
+        background: linear-gradient(to bottom, rgba(0,0,0,0.0) 40%,rgba(0,0,0,1) 100%);
+        transition: 0.4s;
+    }
+    &:hover:after{
+        opacity: 0.6;
+    }
 }
-.blog-content-container{
-    position: absolute;
-    top:0; left:0;
-    height: 100%;
-    width: 100%;
-    padding: 20px;
-    background-color: rgba(0,0,0,0.2);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+.blog-gradient-bg{
+
 }
 .blog-item__heading{
     font-size: 20px;
     font-weight: bold;
+    z-index: 50;
 }
 .blog-item__link{
     color: white;
@@ -328,12 +344,14 @@ body{
     }
 }
 .block-item__footer{
+    z-index: 50;
     .paragraph-light{
         font-weight: 300;
         margin-bottom: 3px;
     }
 }
 .blog-item__date{
+    z-index: 50;
     line-height: 1em;
     border-radius: 5px;
     background-color: rgba(38, 38, 38, 0.5);
@@ -348,5 +366,77 @@ body{
     position: absolute;
     top: 30px;
     left: 30px;
+}
+.blog__button{
+    margin-top: 20px;
+}
+.article-contact{
+    color: $text-dark;
+    min-height: 700px;
+    background-image: url('../img/opt/bg-contact.png');
+    background-size: cover;
+    background-position: center center;
+}
+.contact-data-container{
+    margin-top: 30px;
+}
+.contact-form-container{
+    margin-top: 15px;
+    .form-control{
+        background-color: rgba(0, 196, 196, 0.5);
+        min-height: 50px;
+        padding: 20px;
+        padding-left: 16px;
+        border: 0;
+        border-left: 4px solid transparent;
+        border-radius: 0;
+        margin-top: 15px;
+        transition: 0.3s;
+        color: white;
+        &:hover, &:focus{
+            font-weight: bold;
+            outline: none;
+        }
+        &:focus{
+
+            border-left: 4px solid  #355b82;
+        }
+        &::-webkit-input-placeholder {
+          color: white;
+        }
+        &::-moz-placeholder {
+          color: white;
+        }
+        &:-ms-input-placeholder {
+          color: white;
+        }
+        &:-moz-placeholder {
+          color: white;
+        }
+    }
+}
+.footer{
+    background-color: #262626;
+    color: #b9b9b9;
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    .paragraph{
+        margin: 0;
+        color: #b9b9b9;
+    }
+    .logo-link{
+        color: #b9b9b9;
+        transition: 0.3s;
+        font-family: $font-fancy;
+        font-size: 25px;
+        &:hover, &:focus{
+            color: white;
+            text-decoration: none;
+        }
+    }
+    .span_purple{
+        color: #ff2b58;
+    }
 }
 @import 'responsive';
