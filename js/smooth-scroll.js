@@ -5,7 +5,6 @@ $(document).ready(function(){
             targetElement = $('#'+target),
             targetTop = targetElement.offset().top;
         $('html, body').animate({ scrollTop: targetTop }, 600, history.pushState(null,null,hash));
-        targetElement.
         targetElement.focus();
         if (targetElement.is(":focus")) { // Checking if the target was focused
             return false;

@@ -19,3 +19,19 @@
         font-size: 30px;
     }
 }
+@media (max-height: 992px) {
+    .navbar{
+        .show, .collapsing{
+            background-color: rgba(255,255,255,0.9);
+            .nav-item .nav-link{
+                margin: 10px 0;
+                width: 100%;
+                text-align: center;
+                &:before{
+                    width: 20%;
+                    left: 40%;
+                }
+            }
+        }
+    }
+}
