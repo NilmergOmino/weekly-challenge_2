@@ -1,5 +1,6 @@
 $(document).ready(function(){
     $('.nav-link').on('click', function(event){
+        $('.navbar-collapse').removeClass('show');
         var target = this.hash.slice(1),
             hash = this.hash,
             targetElement = $('#'+target),

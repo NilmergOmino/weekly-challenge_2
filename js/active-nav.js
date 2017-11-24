@@ -4,9 +4,8 @@ $(document).ready(function(){
             articleTop = $(this).offset().top,
             articleHeight = $(this).height();
         $(window).on('resize', function(){
-            article = $(this);
-            articleTop = $(this).offset().top;
-            articleHeight = $(this).height();
+            articleTop = article.offset().top;
+            articleHeight = article.height();
         })
         setActiveMenuLink();
         $(window).on('scroll', setActiveMenuLink);
@@ -21,5 +20,4 @@ $(document).ready(function(){
             }
         }
     })
-
 })

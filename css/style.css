@@ -22,6 +22,15 @@ body {
   top: 50px;
   left: 0;
   width: 100%; }
+  .navbar .show, .navbar .collapsing {
+    background-color: rgba(255, 255, 255, 0.9); }
+    .navbar .show .nav-item .nav-link, .navbar .collapsing .nav-item .nav-link {
+      margin: 10px 15px;
+      width: 100%;
+      text-align: center; }
+      .navbar .show .nav-item .nav-link:before, .navbar .collapsing .nav-item .nav-link:before {
+        width: 20%;
+        left: 40%; }
 
 .navbar-light .nav-item {
   text-transform: uppercase;
@@ -393,15 +402,5 @@ body {
 
   .section__heading {
     font-size: 30px; } }
-@media (max-height: 992px) {
-  .navbar .show, .navbar .collapsing {
-    background-color: rgba(255, 255, 255, 0.9); }
-    .navbar .show .nav-item .nav-link, .navbar .collapsing .nav-item .nav-link {
-      margin: 10px 0;
-      width: 100%;
-      text-align: center; }
-      .navbar .show .nav-item .nav-link:before, .navbar .collapsing .nav-item .nav-link:before {
-        width: 20%;
-        left: 40%; } }
 
 /*# sourceMappingURL=style.css.map */
